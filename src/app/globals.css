@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+@theme {
+  /* Default (Light Mode) Variables */
+  --background: #f7f7f7;       /* A light grey for the page background */
+  --foreground: #1F2937;       /* Dark text for primary content */
+  --card: #FFFFFF;           /* White for card backgrounds */
+  --text-secondary: #6B7280;   /* Grey for less important text */
+  --border: #E5E7EB;           /* A light border color */
+  --card-hover: #f0f0f0;       /* A slightly darker white for hover */
+}
+
+/* Dark Mode Overrides */
+.dark {
+  --background: #191919;       /* The main dark background */
+  --foreground: #E5E7EB;       /* Light text for dark mode */
+  --card: #222222;           /* A slightly lighter dark for cards */
+  --text-secondary: #9CA3AF;   /* Lighter grey text for dark mode */
+  --border: #374151;           /* A visible border color for dark mode */
+  --card-hover: #2a3052;       /* Unchanged hover color */
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: Inter, sans-serif;
+}
+
