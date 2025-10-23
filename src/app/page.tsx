@@ -15,12 +15,16 @@ const CustomAssistantMessage = (props: AssistantMessageProps) => {
           {message && <Markdown content={message.content || ""} /> }
           {isLoading && icons.spinnerIcon}
         </div>
-        {/* <div>
-           {rawData && JSON.stringify(rawData?.toolCalls?.map((x: { function: Array<Map<string,string>>; }) => x.function),null,2)} 
-        </div>
-        <div style={{color:'white'}}>
-          "rawData" {rawData && JSON.stringify(rawData)} 
-        </div> */}
+        {rawData?.toolCalls && rawData.toolCalls.length > 0 && (
+          <div style={{color:'yellow', border: 'yellow', marginTop: '10px', padding: '10px', backgroundColor: '#333'}}>
+            <pre>{JSON.stringify(rawData.toolCalls.map((x: { function: Array<Map<string,string>>; }) => x.function), null, 2)}</pre>
+          </div>
+        )}
+        {rawData?.state && (
+          <div style={{color:'yellow', border: 'yellow', marginTop: '10px', padding: '10px', backgroundColor: '#333'}}>
+              <pre>{JSON.stringify(rawData.state, null, 2)}</pre>
+          </div>
+        )}
       </div>
     </div>
   );
